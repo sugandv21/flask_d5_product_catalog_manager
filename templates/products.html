@@ -1,0 +1,29 @@
+<h1>All Products</h1>
+<a href="/add">Add Product</a>
+
+<h2>In Stock Products</h2>
+<ul>
+  {% for p in in_stock_products %}
+    <li>{{ p.name }} - ${{ p.price }}</li>
+  {% endfor %}
+</ul>
+
+<h2>All Products</h2>
+<table border="1">
+<tr>
+<th>ID</th><th>Name</th><th>Price</th><th>In Stock</th><th>Description</th><th>Actions</th>
+</tr>
+{% for p in products %}
+<tr>
+<td>{{ p.id }}</td>
+<td>{{ p.name }}</td>
+<td>{{ p.price }}</td>
+<td>{{ p.in_stock }}</td>
+<td>{{ p.description }}</td>
+<td>
+<a href="/edit/{{p.id}}">Edit</a> | 
+<a href="/delete/{{p.id}}">Delete</a>
+</td>
+</tr>
+{% endfor %}
+</table>

@@ -1,0 +1,9 @@
+<h1>Edit Product</h1>
+<form method="POST">
+  Name: <input name="name" value="{{ product.name }}"><br>
+  Price: <input name="price" type="number" step="0.01" value="{{ product.price }}"><br>
+  In Stock: <input type="checkbox" name="in_stock" {% if product.in_stock %}checked{% endif %}><br>
+  Description: <textarea name="description">{{ product.description }}</textarea><br>
+  <button type="submit">Update</button>
+</form>
+<a href="/">Back</a>
